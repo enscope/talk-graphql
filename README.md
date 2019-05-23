@@ -29,6 +29,10 @@ To enable GraphQL support in your Symfony project, you need to:
 This should prepare your environment for a basic GraphQL support.
 Next is to create your own *types*, *fields* and *resolvers*.
 
+## Talk Slides & Resources
+
+You can find PDF version of talk slides in `dev-docs` folder along the database model and Insomnia workspace export.
+
 ## Questions?
 
 Ask!
