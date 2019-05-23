@@ -1,0 +1,41 @@
+tconst	ordering	nconst	category	job	characters
+tt0848228	10	nm0285701	editor	\N	\N
+tt0848228	1	nm0000375	actor	\N	["Tony Stark","Iron Man"]
+tt0848228	2	nm0262635	actor	\N	["Steve Rogers","Captain America"]
+tt0848228	3	nm0424060	actress	\N	["Natasha Romanoff","Black Widow"]
+tt0848228	4	nm0719637	actor	\N	["Clint Barton","Hawkeye"]
+tt0848228	5	nm0923736	director	\N	\N
+tt0848228	6	nm0672015	writer	story	\N
+tt0848228	7	nm0270559	producer	producer	\N
+tt0848228	8	nm0006293	composer	\N	\N
+tt0848228	9	nm0568974	cinematographer	director of photography	\N
+tt2395427	10	nm0270559	producer	producer	\N
+tt2395427	1	nm0000375	actor	\N	["Tony Stark","Iron Man"]
+tt2395427	2	nm0262635	actor	\N	["Steve Rogers","Captain America"]
+tt2395427	3	nm0749263	actor	\N	["Bruce Banner","Hulk"]
+tt2395427	4	nm1165110	actor	\N	["Thor"]
+tt2395427	5	nm0923736	director	\N	\N
+tt2395427	6	nm0498278	writer	based on the Marvel comics by	\N
+tt2395427	7	nm0456158	writer	based on the Marvel comics by	\N
+tt2395427	8	nm0800209	writer	character created by: Captain America	\N
+tt2395427	9	nm4160687	writer	character created by: Thanos	\N
+tt4154756	10	nm0456158	writer	based on the Marvel comics by	\N
+tt4154756	1	nm0000375	actor	\N	["Tony Stark","Iron Man"]
+tt4154756	2	nm1165110	actor	\N	["Thor"]
+tt4154756	3	nm0749263	actor	\N	["Bruce Banner","Hulk"]
+tt4154756	4	nm0262635	actor	\N	["Steve Rogers","Captain America"]
+tt4154756	5	nm0751577	director	\N	\N
+tt4154756	6	nm0751648	director	\N	\N
+tt4154756	7	nm1321655	writer	screenplay by	\N
+tt4154756	8	nm1321656	writer	screenplay by	\N
+tt4154756	9	nm0498278	writer	based on the Marvel comics by	\N
+tt4154796	10	nm0456158	writer	based on the Marvel comics by	\N
+tt4154796	1	nm0000375	actor	\N	["Tony Stark","Iron Man"]
+tt4154796	2	nm0262635	actor	\N	["Steve Rogers","Captain America"]
+tt4154796	3	nm0749263	actor	\N	["Bruce Banner","Hulk"]
+tt4154796	4	nm1165110	actor	\N	["Thor"]
+tt4154796	5	nm0751577	director	\N	\N
+tt4154796	6	nm0751648	director	\N	\N
+tt4154796	7	nm1321655	writer	written by	\N
+tt4154796	8	nm1321656	writer	written by	\N
+tt4154796	9	nm0498278	writer	based on the Marvel comics by	\N

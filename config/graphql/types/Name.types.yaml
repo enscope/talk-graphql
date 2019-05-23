@@ -1,0 +1,43 @@
+Name:
+  type: object
+  config:
+    description: "IMDb Name representation."
+    resolveField: '@=resolver("App\\GraphQL\\Resolver\\NameResolver", [info, value, args])'
+    fields:
+      id:
+        type: ID!
+        description: "Identifier."
+      primaryName:
+        type: String!
+        description: "Primary name."
+      birthYear:
+        type: Int
+        description: "Birth year."
+      deathYear:
+        type: Int
+        description: "Death year."
+      imdbUrl:
+        type: String
+        description: "URL of the title entry on IMDb."
+      titles:
+        type: "[TitleName]"
+        description: "Titles associated with this name."
+        args:
+          category:
+            type: String
+            description: "Categories to query (delimited by comma)"
+          type:
+            type: String
+            description: "Type of the title (movie, tvSeries,...)"
+
+PaginatedNames:
+  type: object
+  inherits: [PaginatedInterface]
+  config:
+    interfaces: [PaginatedInterface]
+    description: "IMDb listable Names representation."
+    resolveField: '@=resolver("App\\GraphQL\\Resolver\\PaginatedNamesResolver", [info, value, args])'
+    fields:
+      items:
+        type: "[Name]"
+        description: "Returned items."

@@ -1,0 +1,37 @@
+SortDirection:
+  type: enum
+  config:
+    description: "Sort direction"
+    values:
+      ASC:
+        value: asc
+        description: "Ascending sort order."
+      DESC:
+        value: desc
+        description: "Descending sort order."
+
+OrderByInput:
+  type: input-object
+  config:
+    fields:
+      field:
+        type: String!
+        description: "Field to order by"
+      direction:
+        type: SortDirection!
+        description: "Ordering direction"
+
+PaginatedInterface:
+  type: interface
+  config:
+    description: "Base interface for all paginated types."
+    fields:
+      offset:
+        type: Int
+        description: "Offset of the first item."
+      limit:
+        type: Int
+        description: "Maximum number of returned items."
+      filteredCount:
+        type: Int
+        description: "Total count of items matching filter."

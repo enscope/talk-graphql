@@ -1,0 +1,18 @@
+PaginatedWatchlist:
+  type: object
+  config:
+    description: "Paginated watchlist representation."
+    resolveField: '@=resolver("App\\GraphQL\\Resolver\\PaginatedWatchlistResolver", [info, value, args])'
+    fields:
+      offset:
+        type: Int
+        description: "Offset of the first item."
+      limit:
+        type: Int
+        description: "Maximum number of returned items."
+      filteredCount:
+        type: Int
+        description: "Total count of items matching filter."
+      items:
+        type: "[Title]"
+        description: "Titles in my watchlist."

@@ -1,0 +1,5 @@
+tconst	titleType	primaryTitle	originalTitle	isAdult	startYear	endYear	runtimeMinutes	genres
+tt0848228	movie	The Avengers	The Avengers	0	2012	\N	143	Action,Adventure,Sci-Fi
+tt2395427	movie	Avengers: Age of Ultron	Avengers: Age of Ultron	0	2015	\N	141	Action,Adventure,Sci-Fi
+tt4154756	movie	Avengers: Infinity War	Avengers: Infinity War	0	2018	\N	149	Action,Adventure,Sci-Fi
+tt4154796	movie	Avengers: Endgame	Avengers: Endgame	0	2019	\N	181	Action,Adventure,Fantasy

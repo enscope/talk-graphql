@@ -1,0 +1,23 @@
+Mutation:
+  type: object
+  config:
+    description: "Base mutation."
+    fields:
+      AddToWatchlist:
+        type: Title
+        description: "Adds a title to current users' watchlist."
+        args:
+          id:
+            type: ID!
+            description: "Identifier of the title to add."
+        access: "@=isAuthenticated()"
+        resolve: '@=mutation("App\\GraphQL\\Mutation\\WatchlistMutation::addToWatchlist", [args["id"]])'
+      RemoveFromWatchlist:
+        type: Title
+        description: "Removes a title from current users' watchlist."
+        args:
+          id:
+            type: ID!
+            description: "Identifier of the title to remove."
+        access: "@=isAuthenticated()"
+        resolve: '@=mutation("App\\GraphQL\\Mutation\\WatchlistMutation::removeFromWatchlist", [args["id"]])'

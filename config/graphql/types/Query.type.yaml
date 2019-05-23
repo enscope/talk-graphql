@@ -1,0 +1,82 @@
+Query:
+  type: object
+  config:
+    description: "Base query."
+    fields:
+      title:
+        type: Title
+        description: "Query single title entry by identifier."
+        args:
+          id:
+            type: ID
+            description: "Identifier of the title."
+        resolve: '@=resolver("App\\GraphQL\\Resolver\\TitleResolver::resolve", [args])'
+      titles:
+        type: PaginatedTitles
+        description: "Query multiple title entries by specified filters."
+        args:
+          type:
+            type: String
+            description: "Type of the title."
+          primaryTitle:
+            type: String
+            description: "Primary title of the title."
+          originalTitle:
+            type: String
+            description: "Original title of the title."
+          offset:
+            type: Int
+            description: "First item."
+          limit:
+            type: Int
+            description: "Maximum number of items."
+          orderBy:
+            type: "[OrderByInput]"
+            description: "Ordering specification."
+        resolve: '@=resolver("App\\GraphQL\\Resolver\\PaginatedTitlesResolver::resolve", [args])'
+      name:
+        type: Name
+        description: "Query single name entry by identifier."
+        args:
+          id:
+            type: ID
+            description: "Identifier of the name."
+        resolve: '@=resolver("App\\GraphQL\\Resolver\\NameResolver::resolve", [args])'
+      names:
+        type: PaginatedNames
+        description: "Query multiple name entries by specified filters."
+        args:
+          primaryName:
+            type: String
+            description: "Primary name of a person."
+          offset:
+            type: Int
+            description: "First item."
+          limit:
+            type: Int
+            description: "Maximum number of items."
+          orderBy:
+            type: "[OrderByInput]"
+            description: "Ordering specification."
+        resolve: '@=resolver("App\\GraphQL\\Resolver\\PaginatedNamesResolver::resolve", [args])'
+      watchlist:
+        type: PaginatedWatchlist
+        description: "Query paginated watchlist of current user."
+        access: "@=isAuthenticated()"
+        public: "@=isAuthenticated()"
+        args:
+          offset:
+            type: Int
+            description: "First item."
+          limit:
+            type: Int
+            description: "Maximum number of items."
+        resolve: '@=resolver("App\\GraphQL\\Resolver\\PaginatedWatchlistResolver::resolve", [args])'
+      categories:
+        type: "[String]"
+        description: "Provides list of Title to Name relation categories."
+        resolve: '@=resolver("App\\GraphQL\\Resolver\\CategoriesResolver::resolve")'
+      greeter:
+        type: Greeter
+        description: "Example of Greeter custom type."
+        resolve: '@=resolver("App\\GraphQL\\Resolver\\GreeterResolver::resolve")'

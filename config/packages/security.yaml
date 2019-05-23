@@ -1,0 +1,22 @@
+security:
+  providers:
+    mockUserProvider:
+      id: App\Security\MockApiUserProvider
+
+  firewalls:
+    dev:
+      pattern: ^/(_(profiler|wdt)|css|images|js)/
+      security: false
+
+    main:
+      anonymous: ~
+      logout: ~
+
+      guard:
+        authenticators:
+          - App\Security\AccessTokenAuthenticator
+
+      stateless: true
+
+  access_control:
+  # empty

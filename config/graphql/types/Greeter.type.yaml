@@ -1,0 +1,30 @@
+Greeter:
+  type: object
+  config:
+    description: "Example greeter type."
+    resolveField: '@=resolver("App\\GraphQL\\Resolver\\GreeterResolver", [info, value, args])'
+    fields:
+      helloWorld:
+        type: String!
+        description: "Says 'Hello, World!'"
+      goodMorning:
+        type: String!
+        description: "Says 'good morning'."
+        args:
+          name:
+            description: "Your name."
+            type: String
+      goodEvening:
+        type: String!
+        description: "Says 'good evening'."
+        args:
+          name:
+            description: "Your name."
+            type: String
+      happyBirthday:
+        type: String!
+        description: "Says 'happy birthday'."
+        args:
+          name:
+            description: "Your name."
+            type: String

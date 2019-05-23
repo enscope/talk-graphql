@@ -1,0 +1,74 @@
+Title:
+  type: object
+  config:
+    description: "IMDb Title representation."
+    resolveField: '@=resolver("App\\GraphQL\\Resolver\\TitleResolver", [info, value, args])'
+    fields:
+      id:
+        type: ID!
+        description: "Identifier."
+      type:
+        type: String!
+        description: "Type or format."
+      primaryTitle:
+        type: String!
+        description: "Primary title used for promotional purposes."
+      originalTitle:
+        type: String!
+        description: "Original title in original language."
+      isAdult:
+        type: Boolean!
+        description: "Indicating adult title."
+      releaseYear:
+        type: Int
+        description: "Release year."
+      runtimeMinutes:
+        type: Int
+        description: "Runtime in minutes."
+      rating:
+        type: Float
+        description: "Rating given by IMDb users."
+      inWatchlist:
+        type: Boolean
+        description: "Indicates, whether this field is in current users' watchlist."
+        access: "@=isAuthenticated()"
+        public: "@=isAuthenticated()"
+      numVotes:
+        type: Int
+        description: "Number of votes."
+      imdbUrl:
+        type: String
+        description: "URL of the title entry on IMDb."
+      names:
+        type: "[TitleName]"
+        description: "Associated names (directors, producers, writers, actors,...)."
+        args:
+          category:
+            type: String
+            description: "Categories to query (delimited by comma)"
+
+PaginatedTitles:
+  type: object
+  inherits: [PaginatedInterface]
+  config:
+    interfaces: [PaginatedInterface]
+    description: "IMDb paginated Titles representation."
+    resolveField: '@=resolver("App\\GraphQL\\Resolver\\PaginatedTitlesResolver", [info, value, args])'
+    fields:
+      items:
+        type: "[Title]"
+        description: "Returned items."
+
+TitleName:
+  type: object
+  config:
+    description: "IMDb Title to Name relation representation."
+    fields:
+      title:
+        type: Title!
+      name:
+        type: Name!
+      category:
+        type: String!
+      ordering:
+        type: Int!
